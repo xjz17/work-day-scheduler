@@ -21,10 +21,12 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-.description{
+/* not yet */
+.description{  
   white-space: pre-wrap;
 }
 
+/* not yet */
 .time-block{
   text-align: center;
   border-radius: 15px;
