@@ -18,26 +18,36 @@ var loadTasks = function()
             time5PM: ""
         };
     }
-    else
-    {
-        $("li").each(function() 
-        {
-            var index = "time"+ $(this).find(".hour").text().trim();
-            $(this).find(".description").val(tasks[index]);
-        });
-    }
-    checkTime();
-}
 
+    $("li").each(function() 
+    {
+        var index = "time"+ $(this).find(".hour").text().trim();
+        $(this).find(".description").val(tasks[index]);
+    });
+
+}
 
 var checkTime = function()
 {
     var currentHour = moment().format("hA");
+    currentHour = moment(currentHour,"hA"); //current hour
+
+    var endDay = moment("11:59PM","h:mA"); //variable for last minute of the day
+    var currentHourMinute = moment().format("h:mA"); //current hour & minute 
+    
+    //check if end of the day clear tasks
+    if(moment(currentHourMinute,"h:mA").isSame(endDay))
+    {
+        localStorage.clear();
+        loadTasks();
+    }
+
+    // color the time block depend on current time
     $("li").each(function() 
     {
         var list = $(this).find(".hour").text().trim();
         var listTime = moment(list,"hA");
-        currentHour = moment(currentHour,"hA");
+
  
         if (listTime.isBefore(currentHour))
         {
@@ -59,9 +69,17 @@ var checkTime = function()
 //     var index = "time"+ $(this).closest(".row").find(".hour").text().trim();
 //     tasks[index] = $(this).val();
 // });
+$(".time-block").on("click",function()
+{
+    $(this).find(".description").trigger("focus");
+    console.log("focus");
+});
+
 
 $(".saveBtn").on("click", function()
 {
+    $(this).closest(".time-block").find(".description").trigger("blur");
+    console.log("blur");
     var index = "time"+ $(this).closest(".row").find(".hour").text().trim();
     tasks[index] = $(this).closest(".row").find(".description").val();
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -70,4 +88,5 @@ $(".saveBtn").on("click", function()
 var today = moment().format("dddd, MMMM Do");
 $("#currentDay").text(today);
 loadTasks();
+checkTime();
 setInterval(checkTime,(60*1000));
