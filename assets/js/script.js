@@ -32,7 +32,7 @@ var loadTasks = function()
 
 var checkTime = function()
 {
-    var currentHour = "12PM";// moment().format("hA");
+    var currentHour = moment().format("hA");
     $("li").each(function() 
     {
         var list = $(this).find(".hour").text().trim();
