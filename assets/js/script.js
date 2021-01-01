@@ -1,4 +1,6 @@
 var tasks = {};
+
+//load saved tasks 
 var loadTasks = function()
 {
     tasks = localStorage.getItem("tasks");
@@ -19,14 +21,17 @@ var loadTasks = function()
         };
     }
 
+    //load task to time blocks
     $("li").each(function() 
     {
         var index = "time"+ $(this).find(".hour").text().trim();
         $(this).find(".description").val(tasks[index]);
     });
-
 }
 
+// check current time
+// if end of the day clear tasks
+// color tasks depend on the current time 
 var checkTime = function()
 {
     var currentHour = moment().format("hA");
@@ -49,44 +54,46 @@ var checkTime = function()
         var listTime = moment(list,"hA");
 
  
-        if (listTime.isBefore(currentHour))
+        if (listTime.isBefore(currentHour)) // if time in the past
         {
             $(this).find(".description").addClass("past");
         }else 
-        if (listTime.isAfter(currentHour))
+        if (listTime.isAfter(currentHour)) //if time in the future
         {
             $(this).find(".description").addClass("future");
         } else 
-        if (listTime.isSame(currentHour))
+        if (listTime.isSame(currentHour)) //if current time
         {
             $(this).find(".description").addClass("present");
         }
     });
 }
 
-// $(".description").on("change", function()
-// {
-//     var index = "time"+ $(this).closest(".row").find(".hour").text().trim();
-//     tasks[index] = $(this).val();
-// });
+// focas on text when click on time block
 $(".time-block").on("click",function()
 {
     $(this).find(".description").trigger("focus");
-    console.log("focus");
 });
 
+// change text color when task changed and not saved
+$(".description").on("input",function()
+{
+    $(this).removeClass("blackText");
+    $(this).addClass("whiteText");
+});
 
+// save the task and change the saved task color to black
 $(".saveBtn").on("click", function()
 {
-    $(this).closest(".time-block").find(".description").trigger("blur");
-    console.log("blur");
+    $(this).closest(".row").find(".description").removeClass("whiteText");
+    $(this).closest(".row").find(".description").addClass("blackText");
     var index = "time"+ $(this).closest(".row").find(".hour").text().trim();
     tasks[index] = $(this).closest(".row").find(".description").val();
     localStorage.setItem("tasks", JSON.stringify(tasks));
 });
 
-var today = moment().format("dddd, MMMM Do");
-$("#currentDay").text(today);
-loadTasks();
-checkTime();
-setInterval(checkTime,(60*1000));
+var today = moment().format("dddd, MMMM Do"); // get today date
+$("#currentDay").text(today);  // show todays date
+loadTasks(); //load tasks
+checkTime(); //check the time
+setInterval(checkTime,(60*1000)); //check time every minute
