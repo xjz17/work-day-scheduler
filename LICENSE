@@ -1,67 +1,5 @@
-# super-disco
-
-## Table of Contents
-
-
-* [Website](#Website)
-* [Usage](#usage)
-* [Credits](#credits)
-* [Badges](#badges)
-* [License](#license)
-
-
-## Website:
-
-A simple calendar application for scheduling your work day and saving events for each hour of the day.
-
-It allows you to add important events so you can manage your time effectively.
-
-https://raedaltaki.github.io/super-disco/
-
-
-## Usage:
-Open the website and schedule your work day.
-
--When you open the planner the current day is displayed at the top of the calendar.
-
--When you scroll down, you are presented with time blocks for standard business hours.
-
--When you view the time blocks for that day, each time block is color-coded to indicate whether it is in the past,present, or future.
-
--When you click into a time block, you can enter an event.
-
--When you click the save button for that time block, the text for that event is saved in local storage.
-
--When you refresh the page, the saved events persist.
-
-
-![Image 1](./assets/images/Demo.gif)
-
-
-## Credits:
-
-https://courses.bootcampspot.com/
-
-https://github.com/raedaltaki/super-disco
-
-
-## Badges:
-
-![badmath](https://img.shields.io/badge/HTML-100.0%25-blue)
-![badmath](https://img.shields.io/badge/CSS-100.0%25-blue)
-![badmath](https://img.shields.io/badge/JavaScript-100.0%25-blue)
-![badmath](https://img.shields.io/badge/JQuery-100.0%25-blue)
-![badmath](https://img.shields.io/badge/Bootstrap-100.0%25-blue)
-
-
-## License:
-
-
-### Mozilla Public License Version 2.0
-
-
-Copyright (c) 2020 Raed Altaki
-
+Mozilla Public License Version 2.0
+==================================
 
 1. Definitions
 --------------
@@ -321,8 +259,10 @@ have been validly granted by You or Your distributors under this License
 prior to termination shall survive termination.
 
 ************************************************************************
+*                                                                      *
 *  6. Disclaimer of Warranty                                           *
 *  -------------------------                                           *
+*                                                                      *
 *  Covered Software is provided under this License on an "as is"       *
 *  basis, without warranty of any kind, either expressed, implied, or  *
 *  statutory, including, without limitation, warranties that the       *
@@ -334,12 +274,14 @@ prior to termination shall survive termination.
 *  repair, or correction. This disclaimer of warranty constitutes an   *
 *  essential part of this License. No use of any Covered Software is   *
 *  authorized under this License except under this disclaimer.         *
+*                                                                      *
 ************************************************************************
 
 ************************************************************************
-
+*                                                                      *
 *  7. Limitation of Liability                                          *
 *  --------------------------                                          *
+*                                                                      *
 *  Under no circumstances and under no legal theory, whether tort      *
 *  (including negligence), contract, or otherwise, shall any           *
 *  Contributor, or anyone who distributes Covered Software as          *
@@ -355,6 +297,7 @@ prior to termination shall survive termination.
 *  jurisdictions do not allow the exclusion or limitation of           *
 *  incidental or consequential damages, so this exclusion and          *
 *  limitation may not apply to You.                                    *
+*                                                                      *
 ************************************************************************
 
 8. Litigation
