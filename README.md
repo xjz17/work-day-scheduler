@@ -35,7 +35,7 @@ Open the website and schedule your work day.
 -When you refresh the page, the saved events persist.
 
 
-![Image 1](./assets/images/Demo.gif)
+![Image 1](./assets/images/demo.gif)
 
 
 ## Credits:
