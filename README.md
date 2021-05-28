@@ -16,7 +16,7 @@ A simple calendar application for scheduling your work day and saving events for
 
 It allows you to add important events so you can manage your time effectively.
 
-https://raedaltaki.github.io/super-disco/
+https://raedaltaki.github.io/work-day-scheduler/
 
 
 ## Usage:
@@ -42,7 +42,7 @@ Open the website and schedule your work day.
 
 https://courses.bootcampspot.com/
 
-https://github.com/raedaltaki/super-disco
+https://github.com/raedaltaki/work-day-scheduler/
 
 
 ## Badges:
