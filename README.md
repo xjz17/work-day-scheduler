@@ -1,4 +1,4 @@
-# super-disco
+# Work Day Scheduler
 
 ## Table of Contents
 
