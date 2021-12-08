@@ -9,6 +9,9 @@ var loadTasks = function()
     {
         tasks =
         {
+            time6AM: "",
+            time7AM: "",
+            time8AM: "",
             time9AM: "",
             time10AM: "",
             time11AM: "",
@@ -17,7 +20,17 @@ var loadTasks = function()
             time2PM: "",
             time3PM: "",
             time4PM: "",
-            time5PM: ""
+            time5PM: "",
+            time6PM: "",
+            time7PM: "",
+            time8PM: "",
+            time9PM: "",
+            time10PM: "",
+            time11PM: "",
+            time12PM: "",
+            time1AM: "",
+            time2AM: "",
+            time3AM: ""
         };
     }
 
@@ -79,13 +92,13 @@ $(".time-block").on("click",function()
 $(".description").on("input",function()
 {
     $(this).removeClass("blackText");
-    $(this).addClass("whiteText");
+    $(this).addClass("blueText");
 });
 
 // save the task and change the saved task color to black
 $(".saveBtn").on("click", function()
 {
-    $(this).closest(".row").find(".description").removeClass("whiteText");
+    $(this).closest(".row").find(".description").removeClass("blueText");
     $(this).closest(".row").find(".description").addClass("blackText");
     var index = "time"+ $(this).closest(".row").find(".hour").text().trim();
     tasks[index] = $(this).closest(".row").find(".description").val();
